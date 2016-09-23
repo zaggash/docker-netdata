@@ -1,0 +1,19 @@
+#!/usr/bin/with-contenv bash
+declare -A dirs
+dirs[netdata]="/etc/netdata"
+dirs[plugins]="/usr/libexec/netdata"
+dirs[cache]="/var/cache/netdata"
+dirs[log]="/var/log/netdata"
+folder="/config"
+
+for key in "${!dirs[@]}"
+do
+        dir="$folder/$key"
+        if [ ! -d "$dir" ]; then mv ${dirs[$key]} "$dir"; else rm -Rf ${dirs[$key]}; fi
+        ln -s "$dir" ${dirs[$key]}
+done
+[ ! -f "$folder/netdata/netdata.conf" ] && touch "$folder/netdata/netdata.conf"
+
+# Permissions
+[ -f /var/run/docker.sock ] && chown abc.abc /var/run/docker.sock
+chown -R abc.abc /config /usr/share/netdata/web /var/lib/netdata /var/cache/netdata /var/log/netdata
