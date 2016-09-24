@@ -14,6 +14,7 @@ RUN \
 
   apk add --no-cache \
     python \
+    ssmtp \
     docker \
     jq \
     libmnl \
