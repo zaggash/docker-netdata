@@ -14,7 +14,6 @@ do
         ln -s "$dir" ${dirs[$key]}
 done
 [ ! -f "$folder/netdata/netdata.conf" ] && touch "$folder/netdata/netdata.conf"
-[ ! -f "$folder/ssmtp/ssmtp.conf" ] && cp /defaults/ssmtp.conf  "$folder/ssmtp/ssmtp.conf"
 
 # Permissions
 [ -f /var/run/docker.sock ] && chown abc.abc /var/run/docker.sock
