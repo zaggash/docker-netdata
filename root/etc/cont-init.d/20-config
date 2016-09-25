@@ -1,4 +1,9 @@
 #!/usr/bin/with-contenv bash
+## Prepare setup config
+userdel netdata && groupdel netdata
+rm -f /etc/ssmtp.conf && cp /defaults/ssmtp.conf /etc/ssmtp.conf
+
+## Create config folders
 declare -A dirs
 dirs[netdata]="/etc/netdata"
 dirs[plugins]="/usr/libexec/netdata"
