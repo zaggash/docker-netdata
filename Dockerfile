@@ -1,9 +1,6 @@
 FROM lsiobase/alpine
 MAINTAINER zaggash
 
-# copy local files
-COPY root/ /
-
 RUN \
   apk add --no-cache --virtual=build-dependencies \
     autoconf \
@@ -31,11 +28,12 @@ RUN \
   
   # cleanup
   cd ~ && \
-  userdel netdata && groupdel netdata && \
-  rm -f /etc/ssmtp.conf && cp /defaults/ssmtp.conf /etc/ssmtp.conf && \
   apk del --purge \
 	build-dependencies && \
   rm -rf /var/cache/apk/* /tmp/*
+
+# copy local files
+COPY root/ /
 
 # ports and volumes
 EXPOSE 19999
