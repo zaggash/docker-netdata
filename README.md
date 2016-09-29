@@ -22,7 +22,7 @@ zaggash/docker-netdata
 **Parameters**
 
 * `-p 19999` - the port(s)
-* `-v /config` - where transmission should store config files and logs
+* `-v /config` - where it should store config files and logs
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` for timezone information
