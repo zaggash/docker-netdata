@@ -16,7 +16,7 @@ docker create --name=netdata \
 -e TZ \
 -e PGID=<gid> -e PUID=<uid> \
 -p 19999:19999 \
-zaggash/docker-transmission
+zaggash/docker-netdata
 ```
 
 **Parameters**
