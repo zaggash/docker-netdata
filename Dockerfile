@@ -1,6 +1,8 @@
 FROM lsiobase/alpine
 MAINTAINER zaggash
 
+ENV NETDATA_VERSION=1.4.0
+
 RUN \
   apk add --no-cache --virtual=build-dependencies \
     autoconf \
