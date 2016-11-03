@@ -1,7 +1,7 @@
 FROM lsiobase/alpine
 MAINTAINER zaggash
 
-ENV NETDATA_VERSION=1.4.0
+ENV NETDATA_VERSION=v1.4.0
 
 RUN \
   apk add --no-cache --virtual=build-dependencies \
@@ -23,7 +23,7 @@ RUN \
     libuuid  && \
   
   # Compile
-  NETDATA_VERSION=$(curl -sX GET  "https://api.github.com/repos/firehol/netdata/releases/latest" | awk '/tag_name/{print $4;exit}' FS='[""]' | sed 's/v//') && \
+  NETDATA_VERSION=echo "$NETDATA_VERSION" | sed 's/v//g'
   curl -sL https://github.com/firehol/netdata/releases/download/v$NETDATA_VERSION/netdata-$NETDATA_VERSION.tar.gz | tar xz -C /tmp -f - && \
   cd /tmp/netdata-$NETDATA_VERSION && \
   ./netdata-installer.sh --dont-wait --dont-start-it && \
