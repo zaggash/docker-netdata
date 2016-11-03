@@ -23,7 +23,7 @@ RUN \
     libuuid  && \
   
   # Compile
-  NETDATA_VERSION=echo "$NETDATA_VERSION" | sed 's/v//g'
+  NETDATA_VERSION=echo "$NETDATA_VERSION" | sed 's/v//g' && \
   curl -sL https://github.com/firehol/netdata/releases/download/v$NETDATA_VERSION/netdata-$NETDATA_VERSION.tar.gz | tar xz -C /tmp -f - && \
   cd /tmp/netdata-$NETDATA_VERSION && \
   ./netdata-installer.sh --dont-wait --dont-start-it && \
