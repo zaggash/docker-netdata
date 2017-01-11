@@ -1,5 +1,6 @@
 FROM lsiobase/alpine
-MAINTAINER zaggash
+
+LABEL maintainer "zaggash"
 
 ENV NETDATA_VERSION=v1.4.0
 
