@@ -2,7 +2,7 @@ FROM lsiobase/alpine
 
 LABEL maintainer "zaggash"
 
-ENV NETDATA_VERSION=v1.5.0
+ENV NETDATA_VERSION=v1.6.0
 
 RUN \
   apk add --no-cache --virtual=build-dependencies \
