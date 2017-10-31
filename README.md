@@ -6,7 +6,7 @@ Based on linuxserver.io baseimage but NOT SUPPORTED by them.
 
 Real-time performance monitoring, done right! [Netdata](https://github.com/firehol/netdata/)
 
-[![netdata](https://github.com/firehol/netdata/blob/master/web/images/seo-performance-256.png)][![netdata](https://github.com/firehol/netdata/blob/master/web/images/animated.gif)]
+![netdata](https://github.com/firehol/netdata/blob/master/web/images/seo-performance-256.png) ![netdata](https://github.com/firehol/netdata/blob/master/web/images/animated.gif)
 
 ## Usage
 
