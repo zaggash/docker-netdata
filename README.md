@@ -13,7 +13,7 @@ Real-time performance monitoring, done right! [Netdata](https://github.com/fireh
 ```
 docker create --name=netdata \
 -v <path to data>:/config \
--e TZ \
+TZ=<timezone> \
 -e PGID=<gid> -e PUID=<uid> \
 -p 19999:19999 \
 zaggash/docker-netdata
