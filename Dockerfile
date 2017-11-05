@@ -6,6 +6,7 @@ ENV NETDATA_VERSION=v1.8.0
 
 RUN \
   apk add --no-cache --virtual=build-dependencies \
+    util-linux-dev \
     autoconf \
     make \
     automake \
