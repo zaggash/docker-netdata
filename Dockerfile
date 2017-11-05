@@ -22,7 +22,7 @@ RUN \
     py-yaml && \
   
   # Compile
-  curl https://my-netdata.io/kickstart-static64.sh >/tmp/kickstart-static64.sh
+  curl https://my-netdata.io/kickstart-static64.sh >/tmp/kickstart-static64.sh && \
   sh /tmp/kickstart-static64.sh --dont-wait && \
   
   # cleanup
