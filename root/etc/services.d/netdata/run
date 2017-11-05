@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 
 exec \
-  /usr/sbin/netdata -D  -c /config/netdata/netdata.conf -u abc -s /host -p 19999
+  /opt/netdata/bin/netdata -D  -c /config/netdata/netdata.conf -u abc -s /host -p 19999
