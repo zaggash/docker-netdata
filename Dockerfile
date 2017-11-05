@@ -2,18 +2,19 @@ FROM lsiobase/alpine
 
 LABEL maintainer "zaggash"
 
-ENV NETDATA_VERSION=v1.6.0
+ENV NETDATA_VERSION=v1.8.0
 
 RUN \
   apk add --no-cache --virtual=build-dependencies \
     autoconf \
+    make \
     automake \
-    build-base \
-    bash \
-    curl \
+    gcc \
+    git \
     libmnl-dev \
-    zlib-dev \
-    util-linux-dev && \
+    pkgconfig \
+    util-linux-dev \
+    zlib-dev && \
 
   apk add --no-cache \
     python \
@@ -21,7 +22,15 @@ RUN \
     docker \
     jq \
     libmnl \
-    libuuid  && \
+    libuuid \
+    python \
+    curl \
+    netcat-openbsd \
+    lm_sensors \
+    nodejs \
+    py-mysqldb \
+    py-psycopg2 \
+    py-yaml && \
   
   # Compile
   NETDATA_VERSION=$(echo "$NETDATA_VERSION" | sed 's/v//g') && \
