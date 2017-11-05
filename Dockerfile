@@ -20,9 +20,8 @@ RUN \
     py-yaml && \
   
   # Compile
-  curl https://my-netdata.io/kickstart-static64.sh >/tmp/kickstart-static64.sh && \
-  sed -i 's#sudo##g' /tmp/kickstart-static64.sh && \
-  sh /tmp/kickstart-static64.sh --dont-wait && \
+  curl -s https://my-netdata.io/kickstart-static64.sh >/tmp/kickstart-static64.sh && \
+  bash /tmp/kickstart-static64.sh --dont-wait && \
   
   # cleanup
   cd ~ && \
