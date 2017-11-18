@@ -24,10 +24,10 @@ RUN \
   bash /tmp/kickstart-static64.sh --dont-wait && \
   
   # cleanup
-  cd ~ && \
-  apk del --purge \
-	build-dependencies && \
-  rm -rf /var/cache/apk/* /tmp/* /etc/init.d
+
+
+	
+rm -rf /var/cache/apk/* /tmp/* /etc/init.d
 
 # copy local files
 COPY root/ /
