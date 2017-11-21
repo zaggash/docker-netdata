@@ -5,10 +5,10 @@ rm -f /etc/ssmtp.conf && cp /defaults/ssmtp.conf /etc/ssmtp.conf
 
 ## Create config folders
 declare -A dirs
-dirs[netdata]="/etc/netdata"
-dirs[plugins]="/usr/libexec/netdata"
-dirs[cache]="/var/cache/netdata"
-dirs[log]="/var/log/netdata"
+dirs[netdata]="/opt/netdata/etc/"
+dirs[plugins]="/opt/netdata/usr/libexec/netdata"
+dirs[cache]="/opt/netdata/var/cache/netdata"
+dirs[log]="/opt/netdata/var/log/netdata"
 dirs[ssmtp]="/etc/ssmtp"
 folder="/config"
 
@@ -22,4 +22,4 @@ done
 
 # Permissions
 [ -f /var/run/docker.sock ] && chown abc.abc /var/run/docker.sock
-chown -R abc.abc /config /usr/share/netdata/web /var/lib/netdata /var/cache/netdata /var/log/netdata
+chown -R abc.abc /config /opt/netdata
