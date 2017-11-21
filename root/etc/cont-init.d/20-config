@@ -5,10 +5,6 @@ rm -f /etc/ssmtp.conf && cp /defaults/ssmtp.conf /etc/ssmtp.conf
 
 ## Create config folders
 declare -A dirs
-dirs[netdata]="/opt/netdata/etc/"
-dirs[plugins]="/opt/netdata/usr/libexec/netdata"
-dirs[cache]="/opt/netdata/var/cache/netdata"
-dirs[log]="/opt/netdata/var/log/netdata"
 dirs[ssmtp]="/etc/ssmtp"
 folder="/config"
 
@@ -18,7 +14,6 @@ do
         if [ ! -d "$dir" ]; then mv ${dirs[$key]} "$dir"; else rm -Rf ${dirs[$key]}; fi
         ln -s "$dir" ${dirs[$key]}
 done
-[ ! -f "$folder/netdata/netdata.conf" ] && touch "$folder/netdata/netdata.conf"
 
 # Permissions
 [ -f /var/run/docker.sock ] && chown abc.abc /var/run/docker.sock
